@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ImageSource x:Key="employees">\Resources\Styles\Picture\Button\employees.png</ImageSource>
+    <ImageSource x:Key="Exit">\Resources\Styles\Picture\Button\Exit.png</ImageSource>
+    <ImageSource x:Key="magnifying">\Resources\Styles\Picture\Button\magnifying.png</ImageSource>
+
+
+</ResourceDictionary>

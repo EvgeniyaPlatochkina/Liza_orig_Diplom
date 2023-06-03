@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="diplomliza1.View.QuestionnairePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:diplomliza1.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="800"
+             FontFamily="Comic Sans MS">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="1"
+                          ItemsSource="{Binding Questionnares,UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedQuestionnares,UpdateSourceTrigger=PropertyChanged}"
+                          BorderThickness="0"
+                          ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          HorizontalAlignment="Stretch"
+                          Background="Transparent" >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border  Background="White"
+                                        BorderBrush="Orange"
+                                        BorderThickness="1"
+                                        CornerRadius="10"
+                                        Margin="10"
+                                        x:Name="Border"
+                                            >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="12"/>
+                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="160"/>
+                                            <ColumnDefinition Width="12"/>
+                                            
+                                        </Grid.ColumnDefinitions>
+                                       
+                                        <Image   Source="{Binding Photo, UpdateSourceTrigger=PropertyChanged}"
+                                            Height="100"
+                                               Width="100"
+                                               Stretch="Uniform"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Grid.Column="1"
+                                               Margin="5"/>
+                                        <StackPanel Grid.Column="2"
+                                                    Margin="5">
+                                            <TextBlock Text="{Binding FullName, StringFormat=ФИО: {0},UpdateSourceTrigger=PropertyChanged}"
+                                                   />
+                                            <TextBlock Text="{Binding DateOfBirth, StringFormat=Дата_рождения: {0},UpdateSourceTrigger=PropertyChanged}"
+                                                   />
+                                            <TextBlock Text="{Binding Email, StringFormat=Email: {0},UpdateSourceTrigger=PropertyChanged}"
+                                                   />
+                                            <TextBlock Text="{Binding Phone, StringFormat=Номер_телефона: {0},UpdateSourceTrigger=PropertyChanged}"
+                                                   />
+                                            <TextBlock Text="{Binding JobVacancy.Title, StringFormat=Вакансия: {0},UpdateSourceTrigger=PropertyChanged}"
+                                                   />
+                                       
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical" Grid.Column="3"
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Status,StringFormat=Резюме: {0},UpdateSourceTrigger=PropertyChanged}"/>
+                                            <TextBlock Text="Дата будет назначена"/>
+                                            <TextBlock Text="{Binding MeetingDate,UpdateSourceTrigger=PropertyChanged}"/>
+                                        </StackPanel>
+                                            
+                                     
+                                    
+                                      
+                                    </Grid>
+
+                                </Border>
+                                <ControlTemplate.Triggers>
+
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="BorderThickness" Value="2"/>
+                                    </Trigger>
+
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Изменить резюме" Command="{Binding OpenEditManagerWindow,UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Column="1"  Content="Удалить резюме" Command="{Binding DeleteStaffButton,UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Column="2"  Content="Печать резюме" Command="{Binding OpenPrintQuestionButton,UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+    </Grid>
+</UserControl>

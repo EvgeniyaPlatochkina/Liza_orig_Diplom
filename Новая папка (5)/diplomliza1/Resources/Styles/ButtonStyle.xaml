@@ -1,0 +1,181 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ButtonStyle1" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
+        <Setter Property="FontFamily" Value="Lucida Console"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource ButtonColor}"
+                            CornerRadius="8"
+                            Height="30"
+                            x:Name="Border">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          x:Name="ContentPsnt"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle3" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
+        <Setter Property="FontFamily" Value="Lucida Console"/> 
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource ButtonColor}"
+                            CornerRadius="8"
+                            Height="20"
+                            x:Name="Border">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          x:Name="ContentPsnt"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ButtonStyle2" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="FontWeight" Value="Black"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <ImageBrush x:Key="EmployeesButtonImage"
+                ImageSource="C:\Users\Александр\Desktop\Liza_Diplom\Новая папка (5)\diplomliza1\Resources\Styles\Picture\Button\employees.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="EmployeesButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource EmployeesButtonImage}"
+                            Height="40"
+                            Width="40"
+                            Margin="5"
+                            BorderBrush="{StaticResource BackgroundLight}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            x:Name="Border"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ImageBrush x:Key="QuestionButtonImage"
+                ImageSource="C:\Users\Александр\Desktop\Liza_Diplom\Новая папка (5)\diplomliza1\Resources\Styles\Picture\Button\QuestionImage.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="QuestionButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource QuestionButtonImage}"
+                            Height="40"
+                            Width="40"
+                            Margin="5"
+                            BorderBrush="{StaticResource BackgroundLight}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            x:Name="Border"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ImageBrush x:Key="VacancyButtonImage"
+                ImageSource="C:\Users\Александр\Desktop\Liza_Diplom\Новая папка (5)\diplomliza1\Resources\Styles\Picture\Button\magnifying.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="VacancyButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource VacancyButtonImage}"
+                            Height="40"
+                            Width="40"
+                            Margin="5"
+                            BorderBrush="{StaticResource BackgroundLight}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            x:Name="Border"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <ImageBrush x:Key="ExitButtonImage"
+                ImageSource="C:\Users\Александр\Desktop\Liza_Diplom\Новая папка (5)\diplomliza1\Resources\Styles\Picture\Button\Exit.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="ExitButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource ExitButtonImage}"
+                            Height="40"
+                            Width="40"
+                            Margin="5"
+                            BorderBrush="{StaticResource BackgroundLight}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            x:Name="Border"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ImageBrush x:Key="InformationButtonImage"
+                ImageSource="C:\Users\Александр\Desktop\Liza_Diplom\Новая папка (5)\diplomliza1\Resources\Styles\Picture\Button\information.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="InformationButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource InformationButtonImage}"
+                            Height="40"
+                            Width="40"
+                            Margin="5"
+                            BorderBrush="{StaticResource BackgroundLight}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            x:Name="Border"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

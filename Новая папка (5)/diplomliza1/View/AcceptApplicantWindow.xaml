@@ -1,0 +1,17 @@
+﻿<Window x:Class="diplomliza1.View.AcceptApplicantWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplomliza1.View"
+        mc:Ignorable="d"
+        Title="Назначение встречи" Height="250" Width="300">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Дата встречи"/>
+            <DatePickerTextBox Text="{Binding DateOfMeeting,UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Content="Назначить" Command="{Binding EditQuestionnareButton,UpdateSourceTrigger=PropertyChanged}" Width="80"/>
+        </StackPanel>
+       
+    </Grid>
+</Window>
